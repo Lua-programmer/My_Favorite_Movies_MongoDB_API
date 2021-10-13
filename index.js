@@ -10,12 +10,15 @@
 
 const express = require('express'); //Importando o express
 const cors = require('cors'); //Importando o cors
+const Conn = require('./conn/conn')
 const port = 8080;
 
 const app = express(); // Inicializando o express
 
+
 app.use(express.json());
 app.use(cors());
+Conn();
 
 // //TESTE
 // app.get("/", (req, res) => {
