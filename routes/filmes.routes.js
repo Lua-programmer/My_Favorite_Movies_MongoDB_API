@@ -13,7 +13,7 @@ router.get('/', filmesController.getFilmes);
 router.get('/:id', filmesController.getFilmesById);
 
 //[POST] /filmes
-router.post('/', filmesController.createFilme);
+router.post('/add', filmesController.createFilme);
 
 //[PUT] /filmes/id
 router.put('/:id', filmesController.editFilme);
