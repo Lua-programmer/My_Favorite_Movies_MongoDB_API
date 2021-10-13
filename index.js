@@ -11,6 +11,7 @@
 const express = require('express'); //Importando o express
 const cors = require('cors'); //Importando o cors
 const Conn = require('./conn/conn')
+const FilmesRoutes = require('./routes/filmes.routes')
 const port = 8080;
 
 const app = express(); // Inicializando o express
@@ -19,6 +20,8 @@ const app = express(); // Inicializando o express
 app.use(express.json());
 app.use(cors());
 Conn();
+
+app.use('/filmes', FilmesRoutes);
 
 // //TESTE
 // app.get("/", (req, res) => {

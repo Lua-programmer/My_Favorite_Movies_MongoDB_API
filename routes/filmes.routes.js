@@ -1,3 +1,5 @@
+//ROTAS => SÃO AS RESPONSAVEIS PELOS METODOS DA API
+
 const express = require('express');
 const FilmesController = require('../controllers/filmes.controller');
 
