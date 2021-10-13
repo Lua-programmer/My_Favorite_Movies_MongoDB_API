@@ -10,6 +10,6 @@ const FilmeModel = new mongoose.Schema({
     dataCriacao: { type: Date, default: Date.now}
 })
 
-const Filme = mongoose.model("filmes, FilmeModel");
+const Filme = mongoose.model("filmes", FilmeModel);
 
 module.exports = Filme;

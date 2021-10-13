@@ -1,9 +1,9 @@
 //CONTROLLER => RESPONSAVEL POR GERENCIAR OS FLUXOS , DEFINE AS REGRAS
 
 const mongoose = require('mongoose');
-const FilmesService = require('./../services/filmes.service');
+const FilmesServices = require('./../services/filmes.service');
 
-const filmesService = new FilmesService();
+const filmesService = new FilmesServices();
 
 class FilmesController {
 
@@ -17,7 +17,7 @@ class FilmesController {
 
         //VALIDAÇÃO
 
-        if (!mongoose.Types.ObjectId.isValid(id)) {
+        if(!mongoose.Types.ObjectId.isValid(id)) {
             res.status(403).send('Id invalido');
             return;
         }
@@ -26,7 +26,7 @@ class FilmesController {
 
         //VALIDAÇÃO
 
-        if (!filme) { 
+        if(!filme) { 
             res.status(404).send('Filme não encontrado');
             return
         }
@@ -36,9 +36,36 @@ class FilmesController {
 
     createFilme = async (req, res) => {
         const filme = req.body;
-        const filmeSave = await filmesService.createFilme(vaga);
+        const filmeSave = await filmesService.createFilme(filme);
         res.send({
             message: `Filme ${filmeSave.nome} criado com sucesso!`
+        })
+    }
+
+    editFilme = async (req, res) => {
+        const id = req.params.id;
+        const filme = req.body;
+        await filmesService.editFilme(id, filme)
+        .then(() => {
+            res.status(200).send({
+                message: `Filme atualizado com sucesso`
+            });
+        })
+        .catch((err) => {
+            res.status(500).send({
+                error: `erro no servidor: ${err}`
+            });
+        })
+
+    }
+
+    deleteFilme = async (req, res) => {
+        const id = req.params.id;
+        await filmesService.deleteFilme(id)
+        .then(() => {
+            res.status(200).send({
+                message: 'Excluido com sucesso!'
+            })
         })
     }
 

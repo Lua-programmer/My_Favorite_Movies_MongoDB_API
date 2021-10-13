@@ -15,7 +15,11 @@ router.get('/:id', filmesController.getFilmesById);
 //[POST] /filmes
 router.post('/', filmesController.createFilme);
 
+//[PUT] /filmes/id
+router.put('/:id', filmesController.editFilme);
 
+//[DELETE] /filmes/id
+router.delete('/:id', filmesController.deleteFilme);
 
 
 module.exports = router;

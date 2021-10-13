@@ -19,4 +19,4 @@ const Conn = () => {
 
 
 //Exportando a const Conn
-module.exports =Conn;
+module.exports = Conn;
