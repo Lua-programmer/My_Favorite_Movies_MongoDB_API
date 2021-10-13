@@ -1,3 +1,5 @@
+//SERVICOS  = > RESPONSAVEIS POR SE CONECTAR COM OS NOSSOS MODELs
+
 const Filme = require('../models/filme'); //Importando o MODEL
 
 class FilmeService {

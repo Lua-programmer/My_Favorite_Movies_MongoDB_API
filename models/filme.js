@@ -1,3 +1,5 @@
+//MODEL => É RESPONSÁVEL PELOS DADOS E FUNÇÕES DO BANCO DE DADOS
+
 const mongoose = require('mongoose'); //Importando o mongoose
 
 const FilmeModel = new mongoose.Schema({
