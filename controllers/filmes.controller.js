@@ -1,5 +1,4 @@
 //CONTROLLER => RESPONSAVEL POR GERENCIAR OS FLUXOS , DEFINE AS REGRAS
-
 const mongoose = require('mongoose');
 const FilmesServices = require('./../services/filmes.service');
 
